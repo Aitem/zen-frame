@@ -10,6 +10,8 @@ install:
 
 script:
   - make test
+  - make uberjar
+  - make deploy
 
 cache:
   directories:

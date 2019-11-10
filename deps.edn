@@ -27,4 +27,18 @@
     {:git/url "https://github.com/cognitect-labs/test-runner"
      :sha     "3cb0a9daf1cb746259dc8309b218f9211ad3b33b"}}
    :jvm-opts    ^:replace ["-XX:-OmitStackTraceInFastThrow" ]
-   :main-opts   ["-m" "cognitect.test-runner" "-d" "runner" "-d" "test"]}}}
+   :main-opts   ["-m" "cognitect.test-runner" "-d" "runner" "-d" "test"]}
+
+
+  :deploy {:extra-deps {deps-deploy {:mvn/version "RELEASE"}}
+           :main-opts ["-m" "deps-deploy.deps-deploy" "deploy"
+                       "target/zen-frame-1.0.0-SNAPSHOT.jar"]}
+
+  :uberjar
+  {:extra-deps {luchiniatwork/cambada {:mvn/version "1.0.0"}}
+   :main-opts  ["-m" "cambada.uberjar"
+                "-p" "resources"
+                "-a" "all"
+                "--app-group-id" "zen-frame"
+                "--app-artifact-id" "zen-frame"]
+   :jvm-opts ^:replace ["-XX:-OmitStackTraceInFastThrow"]}}}
