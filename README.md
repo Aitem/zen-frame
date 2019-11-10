@@ -19,6 +19,7 @@ Pragmatic tools for modern web app
   - route params
   - context for long time data
   - some page metadata
+  - Page titles
 
 * Pages
   Uniq pages
@@ -31,6 +32,7 @@ Pragmatic tools for modern web app
   - storage
   - xhr
   - form
+  - Pages code generation
   - ....
 
 * Re-inspector tools (Google Chrome  extension)
