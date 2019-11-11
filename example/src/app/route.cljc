@@ -1,10 +1,7 @@
-(ns src.app.route)
+(ns app.route)
 
-(def routes
-  {:.                  :app.index.model/index-page
+(def route
+  {:.                  :app.index.model/index
    :html-title         "My app"
    :breadcrumb         "Home"
-   :layout             :landing
-
-   "login"             {:. :app.login.model/login-page
-                        :layout :login-layout}})
+   :layout             :landing})

@@ -2,21 +2,15 @@
   (:require [reagent.core :as reagent]
             [re-frame.core :as rf]
             [zen-frame.core :as zf]
-            [app.layout :as layout]))
-
-
-(rf/reg-event-fx
- ::initialize
- (fn [{db :db} _ ]
-   {:db (assoc db :come-app-config {:foo "bar"})}))
+            [app.index.view]
+            [app.route :as route]))
 
 (defn not-found-page []
   [:div.not-found
    [:h3 "Page not found"]])
 
 (defn mount-root []
-  (rf/dispatchn-sync [::initialize])
-  (rf/dispatchn-sync [::zf/initialize route])
+  (rf/dispatch-sync [::zf/initialize route/route])
   (reagent/render
    [zf/current-page not-found-page]
    (.getElementById js/document "app")))
