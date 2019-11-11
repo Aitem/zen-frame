@@ -11,6 +11,7 @@ install:
 script:
   - make test
   - make uberjar
+  - cd example && make build && cd ..
   - make deploy
 
 cache:
@@ -19,3 +20,11 @@ cache:
     - $HOME/.cljs
     - $HOME/.gitlibs
     - .cpcache
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  local_dir: example/build
+  on:
+    branch: master
