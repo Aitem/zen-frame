@@ -1,11 +1,11 @@
 .EXPORT_ALL_VARIABLES:
-.PHONY: test 
+.PHONY: test build ui-test
 
 test:
 	clojure -A:test:runner
 repl:
 	rm -rf .cpcache/ && clojure  -A:dev:test:nrepl
-uberjar:
-	clojure -A:uberjar
-deploy:
-	clojure -A:deploy
+
+build:
+	clojure -m build
+	cp -r resources/public/* build

@@ -2,6 +2,7 @@
  :deps  {org.clojure/clojure       {:mvn/version "1.10.0"}
          org.clojure/clojurescript {:mvn/version "1.10.520"}
          reagent                   {:mvn/version "0.7.0"}
+         zen-frame                 {:local/root "../"}
          re-frame                  {:mvn/version "0.10.6"}}
 
  :aliases
