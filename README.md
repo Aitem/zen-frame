@@ -3,41 +3,47 @@
 [![Build Status](https://travis-ci.org/Aitem/zen-frame.svg?branch=master)](https://travis-ci.org/Aitem/zen-frame)
 [![Clojars Project](https://img.shields.io/clojars/v/zen-frame.svg)](https://clojars.org/zen-frame)
 
-## Demo .....
 
 ## Overview
 
-Pragmatic tools for modern web app
+Library for connect brouwser with reagent/re-frame application
 
-## Basic concepts
+## Demo 
 
-* Routes
-  Central enter point of your app
-  Some page metadata
-  - generic breadcrump
-  - dynamic layouts
-  - route params
-  - context for long time data
-  - some page metadata
-  - Page titles
+[Demo page](https://aitem.github.io/zen-frame/)
 
-* Pages
+## Base concepts
+
+### Router
+
+All application as a function(url)
+
+Route - declarative description of your application with additional meta information
+Context long time data - pseudo synchronous page loading (wait untill all parent context call `done`)
+
+### Router Tools
+
+Some preapared tool
+
+
+__Page__
   Uniq pages
-  Pages lifi cycle, page state
-  Context long time data
+  Pages life cycle, page state
   View / Model / Form  composition
 
-* Tools
-  - coockes
-  - storage
-  - xhr
-  - form
-  - Pages code generation
-  - ....
+__Layout__
+  Page wrapper
 
-* Re-inspector tools (Google Chrome  extension)
-  - Inspect routes
-  - Inspect forms
-  - Inspect page state
+__Page titler__
 
-## Usage
+__Breadcrumbs__
+
+__Logging__
+  Gen corr-id
+
+__Access Control__
+  Primitive pages isolation by some atts
+
+### Extensability
+
+Custom route MV

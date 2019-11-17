@@ -5,14 +5,10 @@
             [app.index.view]
             [app.route :as route]))
 
-(defn not-found-page []
-  [:div.not-found
-   [:h3 "Page not found"]])
-
 (defn mount-root []
   (rf/dispatch-sync [::zf/initialize route/route])
   (reagent/render
-   [zf/current-page not-found-page]
+   [zf/current-page]
    (.getElementById js/document "app")))
 
 (defn ^:after-load re-render [] (mount-root))

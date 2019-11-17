@@ -8,7 +8,7 @@
              :output-dir "resources/public/js/out"}
    :config {:watch-dirs ["src"]
             :mode :serve
-            :ring-server-options {:port 3449}}})
+            :ring-server-options {:port 3450}}})
 
 
 (defn start []
